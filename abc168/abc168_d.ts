@@ -11,7 +11,7 @@ const readInt = () => parseInt(readString(), 10);
 (function main() {
   const N = readInt();
   const M = readInt();
-  const routes: { [n: number]: number[] } = {}
+  const routes: { [n: number]: number[] } = {};
   const pairs = Array.from({ length: M }, () => {
     const A = readInt();
     const B = readInt();

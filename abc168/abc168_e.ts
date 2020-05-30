@@ -20,7 +20,7 @@ const gcd = (a: bigint, b: bigint) => {
 const MOD = 1000000007;
 const MOD_BIGINT = BigInt(MOD);
 class ModBigInt {
-  constructor(public v: bigint) { }
+  constructor(public v: bigint) {}
 
   static of(n: number | bigint) {
     return new ModBigInt(ModBigInt.toBigInt(n));
@@ -36,30 +36,30 @@ class ModBigInt {
   plus = (other: number | bigint | ModBigInt) => {
     this.v = (this.v + ModBigInt.toBigInt(other)) % MOD_BIGINT;
     return this;
-  }
+  };
   minus = (other: number | bigint | ModBigInt) => {
     this.v = (this.v + MOD_BIGINT - ModBigInt.toBigInt(other)) % MOD_BIGINT;
     return this;
-  }
+  };
   multiply = (other: number | bigint | ModBigInt) => {
     this.v = (this.v * ModBigInt.toBigInt(other)) % MOD_BIGINT;
     return this;
-  }
+  };
   pow = (other: number) => {
-    let v = mod(1);
+    const v = mod(1);
     for (let i = 0; i < other; i++) v.multiply(this.v);
     return v;
-  }
+  };
 }
 
 const mod = ModBigInt.of;
 
-const abs = (a: bigint) => a > 0n ? a : -a;
+const abs = (a: bigint) => (a > 0n ? a : -a);
 
 (function main() {
   const N = readInt();
 
-  let zero: number = 0;
+  let zero = 0;
   const groups: { [k: string]: [number, number] } = {};
   Array.from({ length: N }, () => {
     let A = readBigInt();
@@ -93,11 +93,11 @@ const abs = (a: bigint) => a > 0n ? a : -a;
     }
   });
 
-  let result = mod(1);
+  const result = mod(1);
   for (const k of Object.keys(groups)) {
     const [xn, yn] = groups[k];
 
-    let tmp = mod(0);
+    const tmp = mod(0);
     if (xn) {
       tmp.plus(mod(2).pow(xn).minus(1));
     }
