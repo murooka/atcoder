@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -ue
+
+cat $1 | pbcopy
