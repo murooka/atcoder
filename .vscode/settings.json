@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "*.html": "html",
+        "*.tmpl": "html",
+        "ios": "cpp",
+        "ostream": "cpp",
+        "type_traits": "cpp",
+        "iostream": "cpp",
+        "array": "cpp",
+        "locale": "cpp",
+        "string": "cpp",
+        "iosfwd": "cpp"
+    }
+}
